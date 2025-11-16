@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skuad - Soccer Club Story</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen p-4">
+  <div class="max-w-3xl mx-auto">
+    <h1 class="text-2xl font-bold mb-2" id="judulSkuad">Skuad [Klub]</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="daftarPemain"></div>
+
+    <div class="mt-6 flex gap-3">
+      <button onclick="window.history.back()" class="py-2 px-4 bg-gray-700 hover:bg-gray-600 rounded">← Kembali</button>
+      <button onclick="jualPemainPrompt()" class="ml-auto py-2 px-4 bg-red-700 hover:bg-red-600 rounded">Jual Pemain</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const game = muatGame();
+      if (!game) return window.location.href = 'index.html';
+
+      document.getElementById('judulSkuad').textContent = `Skuad ${game.klub.nama}`;
+
+      const container = document.getElementById('daftarPemain');
+      container.innerHTML = game.skuad.map((p, idx) => `
+        <div class="bg-gray-800 p-3 rounded flex justify-between items-center">
+          <div>
+            <div class="font-semibold">${p.nama}</div>
+            <div class="text-sm text-gray-400">${p.posisi} • OVR: ${p.ovr || 75}</div>
+            <div class="text-xs text-gray-500">Skill: ${p.skill || "85"}</div>
+          </div>
+          <div class="flex gap-1">
+            <button onclick="setStarter(${idx}, true)" class="text-xs px-2 py-1 ${p.starter ? 'bg-green-700' : 'bg-gray-700'} rounded">Inti</button>
+            <button onclick="setStarter(${idx}, false)" class="text-xs px-2 py-1 ${!p.starter ? 'bg-blue-700' : 'bg-gray-700'} rounded">Cadangan</button>
+          </div>
+        </div>
+      `).join('');
+    });
+
+    function setStarter(index, isStarter) {
+      const game = muatGame();
+      game.skuad[index].starter = isStarter;
+      simpanGame(game);
+      location.reload();
+    }
+
+    function jualPemainPrompt() {
+      const nama = prompt("Masukkan nama pemain yang ingin dijual:");
+      if (!nama) return;
+      const game = muatGame();
+      const idx = game.skuad.findIndex(p => p.nama.toLowerCase() === nama.toLowerCase());
+      if (idx === -1) {
+        alert("Pemain tidak ditemukan.");
+        return;
+      }
+      const pemain = game.skuad[idx];
+      if (confirm(`Jual ${pemain.nama} seharga $${pemain.harga.toLocaleString()}?`)) {
+        game.klub.saldo += pemain.harga;
+        game.skuad.splice(idx, 1);
+        simpanGame(game);
+        alert(`Berhasil menjual ${pemain.nama}!`);
+        location.reload();
+      }
+    }
+  </script>
+</body>
+</html>

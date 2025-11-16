@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Klub - Soccer Club Story</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen p-4">
+  <div class="max-w-2xl mx-auto">
+    <h1 class="text-2xl font-bold mb-2" id="namaKlub">[Nama Klub]</h1>
+    <p class="text-gray-400 mb-4" id="saldoKlub">Saldo: $0</p>
+
+    <div class="grid grid-cols-2 gap-3 mb-6">
+      <button onclick="window.location='skuad.html'" class="py-2 bg-blue-700 hover:bg-blue-600 rounded text-center">Skuad</button>
+      <button onclick="window.location='formasi.html'" class="py-2 bg-purple-700 hover:bg-purple-600 rounded text-center">Formasi</button>
+      <button onclick="window.location='transfer.html'" class="py-2 bg-yellow-700 hover:bg-yellow-600 rounded text-center">Transfer</button>
+      <button onclick="window.location='riwayat.html'" class="w-full py-2 mb-4 bg-gray-700 hover:bg-gray-600 rounded">Lihat Riwayat Pertandingan</button>
+      <button onclick="window.location='pertandingan.html'" class="py-2 bg-red-700 hover:bg-red-600 rounded text-center">Mainkan Pertandingan</button>
+    </div>
+
+    <div class="flex gap-3">
+      <button onclick="window.location='menu-kantor.html'" class="py-2 px-4 bg-gray-700 hover:bg-gray-600 rounded">← Kantor</button>
+      <button onclick="window.location='index.html'" class="ml-auto py-2 px-4 bg-gray-800 hover:bg-gray-700 rounded">Keluar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const game = muatGame();
+      if (!game) {
+        alert("Game tidak ditemukan. Kembali ke lobi.");
+        window.location.href = 'index.html';
+        return;
+      }
+      document.getElementById('namaKlub').textContent = game.klub.nama;
+      document.getElementById('saldoKlub').textContent = `Saldo: $${game.klub.saldo.toLocaleString()}`;
+    });
+  </script>
+</body>
+</html>

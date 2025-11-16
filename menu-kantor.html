@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kantor - Soccer Club Story</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen p-4">
+  <div class="max-w-2xl mx-auto">
+    <h1 class="text-2xl font-bold mb-2">Kantor Manajemen</h1>
+    <p class="text-gray-400 mb-4" id="infoKlub">[Klub] • Saldo: $0</p>
+
+    <!-- Sponsor Aktif -->
+    <div class="mb-6">
+      <h2 class="font-semibold mb-2">Sponsor Aktif</h2>
+      <p class="text-sm text-green-400 mb-2" id="sponsorAktif">
+        Memuat...
+      </p>
+    </div>
+
+    <!-- Undangan Sponsor -->
+    <div class="mb-6">
+      <h2 class="font-semibold mb-2">Undangan Sponsor</h2>
+      <div id="undanganSponsor" class="space-y-2">
+        <p class="text-gray-500 text-sm">Belum ada undangan. Menangkan pertandingan untuk dapat tawaran!</p>
+      </div>
+    </div>
+
+    <!-- Simpan Game -->
+    <button onclick="simpanGameManual()" class="w-full py-2 mb-4 bg-green-700 hover:bg-green-600 rounded">Simpan Game</button>
+
+    <div class="flex gap-3">
+      <button onclick="window.location='menu-klub.html'" class="py-2 px-4 bg-gray-700 hover:bg-gray-600 rounded">← Klub</button>
+      <button onclick="window.location='index.html'" class="ml-auto py-2 px-4 bg-gray-800 hover:bg-gray-700 rounded">Keluar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const game = muatGame();
+      if (!game) return window.location.href = 'index.html';
+
+      // Info klub
+      document.getElementById('infoKlub').textContent = 
+        `${game.klub.nama} • Saldo: $${game.klub.saldo.toLocaleString()}`;
+
+      // Sponsor aktif
+      const sponsorEl = document.getElementById('sponsorAktif');
+      if (game.sponsorAktif && game.sponsorAktif.nama !== "Tidak Ada") {
+        sponsorEl.innerHTML = `✅ <strong>${game.sponsorAktif.nama}</strong> (+$${game.sponsorAktif.bonus.toLocaleString()}/pertandingan)`;
+      } else {
+        sponsorEl.textContent = "Belum ada sponsor aktif.";
+      }
+
+      // Undangan sponsor
+      const undanganContainer = document.getElementById('undanganSponsor');
+      if (game.sponsorUndangan && game.sponsorUndangan.length > 0) {
+        undanganContainer.innerHTML = game.sponsorUndangan.map(s => `
+          <div class="bg-gray-800 p-3 rounded flex justify-between items-center">
+            <div>
+              <div class="font-medium">${s.nama}</div>
+              <div class="text-sm text-green-400">+$${s.bonus.toLocaleString()}/pertandingan</div>
+            </div>
+            <div class="flex gap-2">
+              <button onclick="terimaSponsor('${s.nama}', ${s.bonus})" class="px-3 py-1 bg-green-700 hover:bg-green-600 rounded text-sm">Terima</button>
+              <button onclick="tolakSponsor()" class="px-3 py-1 bg-gray-700 hover:bg-gray-600 rounded text-sm">Tolak</button>
+            </div>
+          </div>
+        `).join('');
+      }
+    });
+
+    function terimaSponsor(nama, bonus) {
+      const game = muatGame();
+      game.sponsorAktif = { nama, bonus };
+      delete game.sponsorUndangan;
+      simpanGame(game);
+      alert(`Kontrak dengan ${nama} berhasil!`);
+      location.reload();
+    }
+
+    function tolakSponsor() {
+      const game = muatGame();
+      delete game.sponsorUndangan;
+      simpanGame(game);
+      location.reload();
+    }
+
+    function simpanGameManual() {
+      const game = muatGame();
+      if (game) {
+        game.lastSaved = Date.now();
+        simpanGame(game);
+        alert("Game berhasil disimpan!");
+      }
+    }
+  </script>
+</body>
+</html>

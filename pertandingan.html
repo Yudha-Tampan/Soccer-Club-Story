@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pertandingan - Soccer Club Story</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen p-4">
+  <div class="max-w-2xl mx-auto">
+    <!-- Header: Bendera & Skor -->
+    <div class="flex justify-between items-center mb-2 text-center">
+      <div>
+        <div class="text-2xl" id="benderaKiri">🏴</div>
+        <div class="mt-1 font-bold text-sm" id="namaKiri">[Klub Anda]</div>
+      </div>
+      <div class="text-center">
+        <div class="text-2xl font-mono" id="skor">0 - 0</div>
+        <div class="text-gray-400 text-sm" id="waktu">Menit: 0</div>
+      </div>
+      <div>
+        <div class="text-2xl" id="benderaKanan">🌍</div>
+        <div class="mt-1 font-bold text-sm" id="namaKanan">[Lawan]</div>
+      </div>
+    </div>
+
+    <!-- Komentar Live -->
+    <div class="bg-gray-800 p-3 h-48 overflow-y-auto mb-3 rounded text-sm" id="komentarBox">
+      <div class="text-gray-400">Menunggu kick-off...</div>
+    </div>
+
+    <!-- Kontrol -->
+    <div id="kontrolBiasa" class="grid grid-cols-2 gap-2 mb-3">
+      <button onclick="gantiFormasiPertandingan()" class="py-2 bg-purple-700 hover:bg-purple-600 rounded text-xs">Ganti Formasi</button>
+      <button onclick="substitusiPertandingan()" class="py-2 bg-blue-700 hover:bg-blue-600 rounded text-xs">Substitusi</button>
+    </div>
+
+    <!-- Layar Jeda -->
+    <div id="layarJeda" class="hidden text-center py-4">
+      <h2 class="text-xl font-bold mb-2">🕗 ISTIRAHAT</h2>
+      <p class="mb-3">Skor: <span id="skorJeda">0 - 0</span></p>
+      <button onclick="mulaiBabakKedua()" class="py-2 px-6 bg-green-600 hover:bg-green-500 rounded font-bold">Lanjutkan Babak Kedua</button>
+    </div>
+
+    <button onclick="window.location.href='menu-klub.html'" class="w-full py-2 bg-gray-700 hover:bg-gray-600 rounded text-sm mt-2">← Kembali ke Klub</button>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    let skorKita = 0, skorLawan = 0;
+    let menit = 0;
+    let babak = 1;
+    let komentarInterval;
+    let kita, lawan;
+    let daftarGol = [];
+    let probGolKita = 0.06;
+    let probGolLawan = 0.06;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const game = muatGame();
+      if (!game) return window.location.href = 'index.html';
+
+      kita = game.klub;
+      lawan = lawanList[Math.floor(Math.random() * lawanList.length)];
+
+      // Sistem adil berbasis OVR
+      const ovrKita = game.skuad.reduce((sum, p) => sum + (p.ovr || 70), 0) / game.skuad.length;
+      const ovrLawan = lawan.ovr || 80;
+      const total = ovrKita + ovrLawan;
+      const rasioKita = ovrKita / total;
+      const rasioLawan = ovrLawan / total;
+      probGolKita = rasioKita * 0.10;
+      probGolLawan = rasioLawan * 0.10;
+
+      // Tampilan
+      document.getElementById('benderaKiri').textContent = kita.bendera || "🏴";
+      document.getElementById('benderaKanan').textContent = lawan.bendera;
+      document.getElementById('namaKiri').textContent = kita.nama;
+      document.getElementById('namaKanan').textContent = lawan.nama;
+
+      mulaiBabakPertama();
+    });
+
+    function getRandomPlayer(namaKlub, posisi = null) {
+      if (namaKlub === kita.nama) {
+        const game = muatGame();
+        let pemain = game.skuad;
+        if (posisi) pemain = pemain.filter(p => p.posisi === posisi);
+        if (pemain.length === 0) pemain = game.skuad;
+        return pemain[Math.floor(Math.random() * pemain.length)].nama;
+      } else {
+        let daftar = lawan.skuad;
+        if (posisi === "GK") return daftar[0];
+        return daftar[Math.floor(Math.random() * daftar.length)];
+      }
+    }
+
+    function generateKomentar() {
+      const rand = Math.random();
+
+      if (menit === 1 && babak === 1) {
+        return t('komentarMulai', kita.nama);
+      }
+      if (menit === 46 && babak === 2) {
+        return `${lawan.nama} memulai babak kedua!`;
+      }
+
+      if (rand < 0.04) {
+        const tim = Math.random() > 0.5 ? kita.nama : lawan.nama;
+        const pemain = getRandomPlayer(tim);
+        return `TENDANGAN SUDUT untuk ${tim}! ${pemain} bersiap mengambilnya.`;
+      }
+      if (rand < 0.06) {
+        const tim = Math.random() > 0.5 ? kita.nama : lawan.nama;
+        const pemain = getRandomPlayer(tim);
+        return `PENALTI untuk ${tim}! ${peman} maju sebagai eksekutor.`;
+      }
+      if (rand < 0.09) {
+        const tim = Math.random() > 0.5 ? kita.nama : lawan.nama;
+        return `OFFSIDE untuk ${tim}.`;
+      }
+      if (rand < 0.13) {
+        const pelaku = Math.random() > 0.5 ? getRandomPlayer(kita.nama) : getRandomPlayer(lawan.nama);
+        const korban = Math.random() > 0.5 ? getRandomPlayer(lawan.nama) : getRandomPlayer(kita.nama);
+        return `PELANGGARAN! ${pelaku} menjatuhkan ${korban}.`;
+      }
+      if (rand < 0.22) {
+        const kiper = getRandomPlayer(lawan.nama, "GK");
+        const penyerang = getRandomPlayer(kita.nama);
+        return `${kiper} MENEPIS tendangan ${penyerang}!`;
+      }
+      if (rand < 0.25) {
+        const kiper = getRandomPlayer(kita.nama, "GK");
+        const penyerang = getRandomPlayer(lawan.nama);
+        return `${kiper} MENEPIS tembakan ${penyerang}!`;
+      }
+      if (rand < 0.45) {
+        const tim = Math.random() > 0.5 ? kita.nama : lawan.nama;
+        const pemain = getRandomPlayer(tim);
+        return `${pemain} (${tim}) mengoper bola...`;
+      }
+      if (rand < 0.70) {
+        const tim = Math.random() > 0.5 ? kita.nama : lawan.nama;
+        const pemain = getRandomPlayer(tim);
+        return `${pemain} (${tim}) melepaskan tendangan!`;
+      }
+      if (rand < 0.70 + probGolKita) {
+        const pencetak = getRandomPlayer(kita.nama);
+        skorKita++;
+        daftarGol.push({ pemain: pencetak, klub: kita.nama, menit: menit });
+        return `GOL! ${pencetak} (${kita.nama}) mencetak gol di menit ${menit}!`;
+      }
+      if (rand < 0.70 + probGolKita + probGolLawan) {
+        const pencetak = getRandomPlayer(lawan.nama);
+        skorLawan++;
+        daftarGol.push({ pemain: pencetak, klub: lawan.nama, menit: menit });
+        return `GOL! ${pencetak} (${lawan.nama}) mencetak gol di menit ${menit}!`;
+      }
+
+      return "Pertandingan berlangsung sengit...";
+    }
+
+    function mulaiBabakPertama() {
+      babak = 1;
+      menit = 0;
+      perbaruiTampilan();
+      jalankanMenit(45);
+    }
+
+    function mulaiBabakKedua() {
+      document.getElementById('layarJeda').classList.add('hidden');
+      document.getElementById('kontrolBiasa').classList.remove('hidden');
+      babak = 2;
+      jalankanMenit(90);
+    }
+
+    function jalankanMenit(menitAkhir) {
+      clearInterval(komentarInterval);
+      komentarInterval = setInterval(() => {
+        if (menit >= menitAkhir) {
+          clearInterval(komentarInterval);
+          if (babak === 1) {
+            document.getElementById('skorJeda').textContent = `${skorKita} - ${skorLawan}`;
+            document.getElementById('layarJeda').classList.remove('hidden');
+            document.getElementById('kontrolBiasa').classList.add('hidden');
+          } else {
+            akhiriPertandingan();
+          }
+          return;
+        }
+
+        menit++;
+        perbaruiTampilan();
+        const komentar = generateKomentar();
+
+        const komentarBox = document.getElementById('komentarBox');
+        komentarBox.innerHTML += `<div>[${menit}'] ${komentar}</div>`;
+        komentarBox.scrollTop = komentarBox.scrollHeight;
+      }, 1200);
+    }
+
+    function perbaruiTampilan() {
+      document.getElementById('waktu').textContent = `Menit: ${menit}`;
+      document.getElementById('skor').textContent = `${skorKita} - ${skorLawan}`;
+    }
+
+    function akhiriPertandingan() {
+      const game = muatGame();
+      const menang = skorKita > skorLawan;
+
+      // === BONUS SPONSOR OTOMATIS ===
+      const bonusSponsor = game.sponsorAktif && game.sponsorAktif.nama !== "Tidak Ada" 
+        ? game.sponsorAktif.bonus 
+        : 0;
+      game.klub.saldo += bonusSponsor;
+
+      // === UNDANGAN SPONSOR BARU JIKA MENANG ===
+      if (menang) {
+        const ovrLawan = lawan.ovr || 80;
+        let tier = 1;
+        if (ovrLawan >= 90) tier = 5;
+        else if (ovrLawan >= 85) tier = 4;
+        else if (ovrLawan >= 80) tier = 3;
+        else if (ovrLawan >= 75) tier = 2;
+
+        const sponsorList = [
+          { nama: "UMKM Lokal", bonus: 500000, tier: 1 },
+          { nama: "Perusahaan Daerah", bonus: 1000000, tier: 2 },
+          { nama: "Brand Nasional", bonus: 3000000, tier: 3 },
+          { nama: "Merek Internasional", bonus: 7000000, tier: 4 },
+          { nama: "Korporat Global", bonus: 15000000, tier: 5 }
+        ];
+
+        const sponsorTersedia = sponsorList
+          .filter(s => s.tier <= tier)
+          .map(s => ({ nama: s.nama, bonus: s.bonus }));
+
+        const acak = [...sponsorTersedia]
+          .sort(() => 0.5 - Math.random())
+          .slice(0, Math.min(3, sponsorTersedia.length));
+
+        game.sponsorUndangan = acak;
+      }
+
+      // Simpan riwayat
+      const riwayat = {
+        id: Date.now(),
+        kita: { nama: kita.nama, skor: skorKita, bendera: kita.bendera || "🏴" },
+        lawan: { nama: lawan.nama, skor: skorLawan, bendera: lawan.bendera },
+        kandang: true,
+        gol: [...daftarGol],
+        tanggal: new Date().toLocaleDateString()
+      };
+
+      if (!game.riwayatPertandingan) game.riwayatPertandingan = [];
+      game.riwayatPertandingan.push(riwayat);
+
+      simpanGame(game);
+      alert(`Pertandingan selesai!\n${kita.nama} ${skorKita} - ${skorLawan} ${lawan.nama}\nBonus Sponsor: $${bonusSponsor.toLocaleString()}`);
+      window.location.href = 'menu-klub.html';
+    }
+
+    function gantiFormasiPertandingan() {
+      const newFormasi = prompt("Masukkan formasi (contoh: 4-3-3):");
+      if (newFormasi && formations.includes(newFormasi)) {
+        const game = muatGame();
+        game.formasi = newFormasi;
+        simpanGame(game);
+        alert(`Formasi diubah ke ${newFormasi}`);
+      } else if (newFormasi) {
+        alert("Formasi tidak valid. Pilih: " + formations.join(", "));
+      }
+    }
+
+    function substitusiPertandingan() {
+      const game = muatGame();
+      const cadangan = game.skuad.filter(p => !p.starter);
+      const starters = game.skuad.filter(p => p.starter);
+      if (cadangan.length === 0 || starters.length === 0) {
+        alert("Tidak ada pemain untuk ditukar.");
+        return;
+      }
+      const out = starters[Math.floor(Math.random() * starters.length)];
+      const inP = cadangan[Math.floor(Math.random() * cadangan.length)];
+      out.starter = false;
+      inP.starter = true;
+      simpanGame(game);
+      const komentarBox = document.getElementById('komentarBox');
+      komentarBox.innerHTML += `<div>[${menit}'] [SUB] ${inP.nama} masuk menggantikan ${out.nama}</div>`;
+      komentarBox.scrollTop = komentarBox.scrollHeight;
+    }
+  </script>
+</body>
+</html>

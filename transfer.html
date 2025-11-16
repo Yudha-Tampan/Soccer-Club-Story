@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Transfer - Soccer Club Story</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen p-4">
+  <div class="max-w-3xl mx-auto">
+    <h1 class="text-2xl font-bold mb-2">Pasar Transfer</h1>
+    <p class="text-gray-400 mb-4" id="saldoInfo">Saldo: $0</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="daftarTransfer"></div>
+
+    <div class="mt-6 flex gap-3">
+      <button onclick="window.history.back()" class="py-2 px-4 bg-gray-700 hover:bg-gray-600 rounded">← Kembali</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const game = muatGame();
+      if (!game) return window.location.href = 'index.html';
+
+      document.getElementById('saldoInfo').textContent = `Saldo: $${game.klub.saldo.toLocaleString()}`;
+
+      const container = document.getElementById('daftarTransfer');
+      container.innerHTML = transferList.map(p => `
+        <div class="bg-gray-800 p-3 rounded">
+          <div class="font-semibold">${p.nama}</div>
+          <div class="text-sm text-gray-400">${p.posisi} • OVR: ${p.ovr || 80}</div>
+          <div class="text-xs text-gray-500">Eks: ${p.klubSebelumnya}</div>
+          <div class="mt-2 text-yellow-400 font-mono">$${p.harga.toLocaleString()}</div>
+          <button onclick="tawar('${p.nama}', ${p.harga}, '${p.posisi}', ${p.ovr || 80})" class="mt-2 w-full py-1 bg-green-700 hover:bg-green-600 rounded text-sm">Tawar</button>
+        </div>
+      `).join('');
+    });
+
+    function tawar(nama, harga, posisi, ovr) {
+      const tawaran = prompt(`Tawaran untuk ${nama} ($${harga.toLocaleString()}):`);
+      const tawaranNum = parseInt(tawaran);
+      if (isNaN(tawaranNum)) return alert("Masukkan angka!");
+
+      const game = muatGame();
+      if (tawaranNum >= harga) {
+        if (game.klub.saldo < tawaranNum) {
+          return alert("Saldo tidak cukup!");
+        }
+        game.klub.saldo -= tawaranNum;
+        game.skuad.push({
+          nama,
+          posisi,
+          harga: tawaranNum,
+          ovr,
+          skill: Math.min(99, Math.max(70, ovr - 5 + Math.floor(Math.random() * 10))),
+          starter: false // default cadangan
+        });
+        simpanGame(game);
+        alert("Transfer berhasil! Pemain masuk sebagai cadangan.");
+        location.reload();
+      } else {
+        alert("Pemain ini telah menolak transfer ke tim Anda.");
+      }
+    }
+  </script>
+</body>
+</html>

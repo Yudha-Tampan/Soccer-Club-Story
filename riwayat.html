@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Riwayat - Soccer Club Story</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .flag { width: 24px; height: 16px; display: inline-block; border: 1px solid #555; margin: 0 4px; }
+    .flag.kita { background: linear-gradient(to right, #0033a0 33%, #fff 33%, #fff 66%, #d90000 66%); }
+    .flag.lawan { background: linear-gradient(to right, #d90000 33%, #fff 33%, #fff 66%, #0033a0 66%); }
+  </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen p-4">
+  <div class="max-w-2xl mx-auto">
+    <h1 class="text-2xl font-bold mb-4">Riwayat Pertandingan</h1>
+
+    <div id="daftarRiwayat" class="space-y-4"></div>
+
+    <button onclick="window.history.back()" class="mt-6 w-full py-2 bg-gray-700 hover:bg-gray-600 rounded">← Kembali</button>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const game = muatGame();
+      const container = document.getElementById('daftarRiwayat');
+      if (!game || !game.riwayatPertandingan || game.riwayatPertandingan.length === 0) {
+        container.innerHTML = '<p class="text-gray-500">Belum ada pertandingan.</p>';
+        return;
+      }
+
+      container.innerHTML = game.riwayatPertandingan.map(r => {
+        const golList = r.gol.map(g => 
+          `<div class="text-sm ml-4">⚽ ${g.menit}' - ${g.pemain} (${g.klub})</div>`
+        ).join('');
+
+        return `
+          <div class="bg-gray-800 p-4 rounded">
+            <div class="flex justify-between items-center mb-2">
+              <div class="flex items-center">
+                <span class="flag ${r.kandang ? 'kita' : 'lawan'}"></span>
+                <strong>${r.kita.nama}</strong>
+              </div>
+              <div class="font-mono">${r.kita.skor} - ${r.lawan.skor}</div>
+              <div class="flex items-center">
+                <strong>${r.lawan.nama}</strong>
+                <span class="flag ${r.kandang ? 'lawan' : 'kita'}"></span>
+              </div>
+            </div>
+            <div class="text-gray-400 text-sm mb-2">Tanggal: ${r.tanggal}</div>
+            ${golList || '<div class="text-gray-500 text-sm ml-4">Tidak ada gol.</div>'}
+          </div>
+        `;
+      }).join('');
+    });
+  </script>
+</body>
+</html>
