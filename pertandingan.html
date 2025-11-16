@@ -5,6 +5,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pertandingan - Soccer Club Story</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* From Uiverse.io by vinodjangid07 - DIPERINDAH */
+    .Btn {
+      position: fixed;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 90px;
+      height: 36px;
+      border: none;
+      padding: 0 18px;
+      background: linear-gradient(to right, #6366f1, #8b5cf6);
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+      transition: all 0.25s ease;
+      z-index: 10;
+    }
+
+    .svg {
+      width: 12px;
+      position: absolute;
+      right: 12px;
+      fill: white;
+      transition: all 0.25s ease;
+    }
+
+    .Btn:hover {
+      transform: translateY(-50%) scale(1.05);
+      box-shadow: 0 6px 16px rgba(99, 102, 241, 0.6);
+    }
+
+    .Btn:hover .svg {
+      right: 38px;
+    }
+
+    .Btn:active {
+      transform: translateY(-50%) scale(0.98);
+    }
+
+    /* Responsif */
+    @media (max-width: 640px) {
+      .Btn {
+        width: 80px;
+        height: 32px;
+        font-size: 12px;
+        right: 12px;
+      }
+      .svg {
+        width: 10px;
+        right: 10px;
+      }
+      .Btn:hover .svg {
+        right: 34px;
+      }
+    }
+  </style>
 </head>
 <body class="bg-gray-900 text-white min-h-screen p-4">
   <div class="max-w-2xl mx-auto">
@@ -45,6 +108,13 @@
     <button onclick="window.location.href='menu-klub.html'" class="w-full py-2 bg-gray-700 hover:bg-gray-600 rounded text-sm mt-2">← Kembali ke Klub</button>
   </div>
 
+  <!-- Tombol SKIP -->
+  <button class="Btn" onclick="skipPertandingan()">
+    <svg viewBox="0 0 320 512" class="svg">
+      <path d="M52.5 440.6c-9.5 7.9-22.8 9.7-34.1 4.4S0 428.4 0 416V96C0 83.6 7.2 72.3 18.4 67s24.5-3.6 34.1 4.4l192 160L256 241V96c0-17.7 14.3-32 32-32s32 14.3 32 32V416c0 17.7-14.3 32-32 32s-32-14.3-32-32V271l-11.5 9.6-192 160z"></path>
+    </svg>
+  </button>
+
   <script src="script.js"></script>
   <script>
     let skorKita = 0, skorLawan = 0;
@@ -55,6 +125,7 @@
     let daftarGol = [];
     let probGolKita = 0.06;
     let probGolLawan = 0.06;
+    let sedangSkip = false;
 
     document.addEventListener('DOMContentLoaded', () => {
       const game = muatGame();
@@ -63,7 +134,6 @@
       kita = game.klub;
       lawan = lawanList[Math.floor(Math.random() * lawanList.length)];
 
-      // Sistem adil berbasis OVR
       const ovrKita = game.skuad.reduce((sum, p) => sum + (p.ovr || 70), 0) / game.skuad.length;
       const ovrLawan = lawan.ovr || 80;
       const total = ovrKita + ovrLawan;
@@ -72,7 +142,6 @@
       probGolKita = rasioKita * 0.10;
       probGolLawan = rasioLawan * 0.10;
 
-      // Tampilan
       document.getElementById('benderaKiri').textContent = kita.bendera || "🏴";
       document.getElementById('benderaKanan').textContent = lawan.bendera;
       document.getElementById('namaKiri').textContent = kita.nama;
@@ -113,7 +182,7 @@
       if (rand < 0.06) {
         const tim = Math.random() > 0.5 ? kita.nama : lawan.nama;
         const pemain = getRandomPlayer(tim);
-        return `PENALTI untuk ${tim}! ${peman} maju sebagai eksekutor.`;
+        return `PENALTI untuk ${tim}! ${pemain} maju sebagai eksekutor.`;
       }
       if (rand < 0.09) {
         const tim = Math.random() > 0.5 ? kita.nama : lawan.nama;
@@ -176,6 +245,8 @@
 
     function jalankanMenit(menitAkhir) {
       clearInterval(komentarInterval);
+      if (sedangSkip) return;
+
       komentarInterval = setInterval(() => {
         if (menit >= menitAkhir) {
           clearInterval(komentarInterval);
@@ -199,6 +270,49 @@
       }, 1200);
     }
 
+    // ✅ FUNGSI SKIP BARU
+    function skipPertandingan() {
+      if (sedangSkip) return;
+      
+      const menitSekarang = menit;
+      const menitTarget = Math.min(menit + 10, babak === 1 ? 45 : 90);
+      
+      if (menitSekarang >= (babak === 1 ? 45 : 90)) return;
+
+      sedangSkip = true;
+      clearInterval(komentarInterval);
+
+      // Jalankan 10 menit (atau sampai akhir babak) secara cepat
+      const skipInterval = setInterval(() => {
+        if (menit >= menitTarget) {
+          clearInterval(skipInterval);
+          sedangSkip = false;
+          
+          // Lanjutkan pertandingan normal
+          if (menit < (babak === 1 ? 45 : 90)) {
+            jalankanMenit(babak === 1 ? 45 : 90);
+          } else if (babak === 1) {
+            // Masuk jeda
+            document.getElementById('skorJeda').textContent = `${skorKita} - ${skorLawan}`;
+            document.getElementById('layarJeda').classList.remove('hidden');
+            document.getElementById('kontrolBiasa').classList.add('hidden');
+            sedangSkip = false;
+          } else {
+            akhiriPertandingan();
+          }
+          return;
+        }
+
+        menit++;
+        perbaruiTampilan();
+        const komentar = generateKomentar();
+
+        const komentarBox = document.getElementById('komentarBox');
+        komentarBox.innerHTML += `<div>[${menit}'] ${komentar}</div>`;
+        komentarBox.scrollTop = komentarBox.scrollHeight;
+      }, 200); // 5x lebih cepat dari normal (1200ms → 200ms)
+    }
+
     function perbaruiTampilan() {
       document.getElementById('waktu').textContent = `Menit: ${menit}`;
       document.getElementById('skor').textContent = `${skorKita} - ${skorLawan}`;
@@ -208,13 +322,11 @@
       const game = muatGame();
       const menang = skorKita > skorLawan;
 
-      // === BONUS SPONSOR OTOMATIS ===
       const bonusSponsor = game.sponsorAktif && game.sponsorAktif.nama !== "Tidak Ada" 
         ? game.sponsorAktif.bonus 
         : 0;
       game.klub.saldo += bonusSponsor;
 
-      // === UNDANGAN SPONSOR BARU JIKA MENANG ===
       if (menang) {
         const ovrLawan = lawan.ovr || 80;
         let tier = 1;
@@ -242,7 +354,6 @@
         game.sponsorUndangan = acak;
       }
 
-      // Simpan riwayat
       const riwayat = {
         id: Date.now(),
         kita: { nama: kita.nama, skor: skorKita, bendera: kita.bendera || "🏴" },
