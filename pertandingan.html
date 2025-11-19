@@ -336,12 +336,26 @@
         else if (ovrLawan >= 75) tier = 2;
 
         const sponsorList = [
-          { nama: "UMKM Lokal", bonus: 500000, tier: 1 },
-          { nama: "Perusahaan Daerah", bonus: 1000000, tier: 2 },
-          { nama: "Brand Nasional", bonus: 3000000, tier: 3 },
-          { nama: "Merek Internasional", bonus: 7000000, tier: 4 },
-          { nama: "Korporat Global", bonus: 15000000, tier: 5 }
-        ];
+  { nama: "UMKM Lokal", bonus: 500000, tier: 1 },
+  { nama: "Perusahaan Daerah", bonus: 700000, tier: 2 },
+  { nama: "Brand Nasional", bonus: 850000, tier: 3 },
+  { nama: "Merek Internasional", bonus: 900000, tier: 4 },
+  { nama: "Korporat Global", bonus: 2000000, tier: 5 },
+  
+  // mulai naik-naik nih
+  { nama: "Elite Partner", bonus: 10000000, tier: 6 },
+  { nama: "Prestige Sponsor", bonus: 50000000, tier: 7 },
+  { nama: "Prime Supporter", bonus: 100000000, tier: 8 },
+  { nama: "Supreme Endorser", bonus: 500000000, tier: 9 },
+  { nama: "Ultimate Funding Group", bonus: 1000000000, tier: 10 }, // 1B
+  
+  // menuju puncak dunia ekonomi
+  { nama: "Absolute Sponsor", bonus: 10000000000, tier: 11 }, // 10B
+  { nama: "Hyper Prestige", bonus: 50000000000, tier: 12 }, // 50B
+  { nama: "Ascended Partner", bonus: 100000000000, tier: 13 }, // 100B
+  { nama: "Zenith Collaboration", bonus: 500000000000, tier: 14 }, // 500B
+  { nama: "Pinnacle Alliance", bonus: 1000000000000, tier: 15 } // 1T
+]; 
 
         const sponsorTersedia = sponsorList
           .filter(s => s.tier <= tier)

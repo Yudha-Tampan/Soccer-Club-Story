@@ -625,7 +625,7 @@ const pelatihList = [
         ovrBonus: 4,
         skillBonus: 3,
         efek: "Dapatkan 2 legenda OVR 90",
-        gambar: "zidane.jpg",
+        gambar: "zinedine.jpg",
         bonus: [
             { nama: "Zidane (Prime)", posisi: "AM", ovr: 92, skill: 94, harga: 15000000 },
             { nama: "Ronaldo Nazário", posisi: "ST", ovr: 91, skill: 93, harga: 15000000 }
@@ -695,7 +695,7 @@ const pelatihList = [
         ovrBonus: 3,
         skillBonus: 2,
         efek: "Dapatkan 2 maestro passing",
-        gambar: "xavi.jpg",
+        gambar: "hernan.jpg",
         bonus: [
             { nama: "Ilkay Gündoğan", posisi: "CM", ovr: 85, skill: 87, harga: 9000000 },
             { nama: "Frenkie de Jong", posisi: "CM", ovr: 86, skill: 88, harga: 11000000 }
@@ -725,8 +725,63 @@ const pelatihList = [
     bonus: [
     { nama: "Aurelio Vortex", posisi: "CM", ovr: 9000000000000, skill: 9500000000000000, harga: 500000000000000000 },
     { nama: "Ragnar Blitz", posisi: "RW", ovr: 8800000000000, skill: 910000000000000, harga: 45000000000000000000 },
-    { nama: "Kaizen Raptura", posisi: "ST", ovr: 92000000000000000, skill: 94000000000000000, harga: 5500000000000000000 }
-]
+    { nama: "Kaizen Raptura", posisi: "ST", ovr: 92000000000000000, skill: 94000000000000000, harga: 5500000000000000000 },
+    { nama: "Draven Coldspire", posisi: "CB", ovr: 95000, skill: 91000, harga: 55000000000 },
+    { nama: "Onyx Gravemind", posisi: "DM", ovr: 92000, skill: 92000, harga: 52000000000 },
+    { nama: "Vexar Dominion", posisi: "GK", ovr: 96000, skill: 96000, harga: 58000000000 },
+    { nama: "Sirius Alvaron", posisi: "CAM", ovr: 93000, skill: 97000, harga: 60000000000 },
+    { nama: "Velrox Lumina", posisi: "LW", ovr: 91000, skill: 93000, harga: 48000000000 },
+    { nama: "Titan Morvane", posisi: "CB", ovr: 94000, skill: 90000, harga: 57000000000 },{ nama: "Sirius Alvaron", posisi: "CAM", ovr: 93000, skill: 97000, harga: 60000000000 },
+    { nama: "Velrox Lumina", posisi: "LW", ovr: 91000, skill: 93000, harga: 48000000000 },
+    { nama: "Titan Morvane", posisi: "CB", ovr: 94000, skill: 90000, harga: 57000000000 },
+    ]
+},
+{
+    nama: "Apex Prime Overlord",
+    spesialisasi: "The Unbound Supremacy",
+    harga: 1,
+    ovrBonus: 9999999999999999999999999999990000000000,
+    skillBonus: 888888888888888888888888888880000000000,
+    efek: "Menciptakan ulang seluruh semesta tim mu",
+    gambar: "apex.png",
+    bonus: [
+            // 1–15 (dari kamu)
+            { nama: "Zyrex Ultimora", posisi: "ST", ovr: 9999999999999990000000000, skill: 8888888888888880000000000, harga: 50000000000000000 },
+            { nama: "Kael Venomstrike", posisi: "CF", ovr: 9999999999999980000000000, skill: 8888888888888870000000000, harga: 50000000000000000 },
+            { nama: "Ravion Hellflare", posisi: "LW", ovr: 9999999999999970000000000, skill: 8888888888888860000000000, harga: 50000000000000000 },
+            { nama: "Drake Solarborn", posisi: "RW", ovr: 9999999999999960000000000, skill: 8888888888888850000000000, harga: 50000000000000000 },
+            { nama: "Mythra Zephyrion", posisi: "AM", ovr: 9999999999999950000000000, skill: 8888888888888840000000000, harga: 50000000000000000 },
+            { nama: "Lexion Dawnbringer", posisi: "CM", ovr: 9999999999999940000000000, skill: 8888888888888830000000000, harga: 50000000000000000 },
+            { nama: "Xavor Nullstride", posisi: "DM", ovr: 9999999999999930000000000, skill: 8888888888888820000000000, harga: 50000000000000000 },
+            { nama: "Tyran Voidwalker", posisi: "LM", ovr: 9999999999999920000000000, skill: 8888888888888810000000000, harga: 50000000000000000 },
+            { nama: "Rynox Frostbane", posisi: "RM", ovr: 9999999999999910000000000, skill: 8888888888888800000000000, harga: 50000000000000000 },
+            
+            { nama: "Vectra Steelclaw", posisi: "CB", ovr: 9999999999999900000000000, skill: 8888888888888790000000000, harga: 50000000000000000 },
+            { nama: "Gravon Ironhide", posisi: "CB", ovr: 9999999999999890000000000, skill: 8888888888888780000000000, harga: 50000000000000000 },
+            { nama: "Zenoth Shattercore", posisi: "LB", ovr: 9999999999999880000000000, skill: 8888888888888770000000000, harga: 50000000000000000 },
+            { nama: "Voltrix Edgewind", posisi: "RB", ovr: 9999999999999870000000000, skill: 8888888888888760000000000, harga: 50000000000000000 },
+            
+            { nama: "Ulthor Titanborn", posisi: "GK", ovr: 9999999999999860000000000, skill: 8888888888888750000000000, harga: 50000000000000000 },
+            
+            // 16–30 (penambahan gua)
+            { nama: "Aroxx Blazewarden", posisi: "ST", ovr: 9999999999999850000000000, skill: 8888888888888740000000000, harga: 50000000000000000 },
+            { nama: "Krylen Voidstalker", posisi: "CF", ovr: 9999999999999840000000000, skill: 8888888888888730000000000, harga: 50000000000000000 },
+            { nama: "Zelphyr Darkwings", posisi: "LW", ovr: 9999999999999830000000000, skill: 8888888888888720000000000, harga: 50000000000000000 },
+            { nama: "Mavros Skyflare", posisi: "RW", ovr: 9999999999999820000000000, skill: 8888888888888710000000000, harga: 50000000000000000 },
+            { nama: "Elyndra Mystborne", posisi: "AM", ovr: 9999999999999810000000000, skill: 8888888888888700000000000, harga: 50000000000000000 },
+            
+            { nama: "Kryos Emberfang", posisi: "CM", ovr: 9999999999999800000000000, skill: 8888888888888690000000000, harga: 50000000000000000 },
+            { nama: "Talon Nightwraith", posisi: "DM", ovr: 9999999999999790000000000, skill: 8888888888888680000000000, harga: 50000000000000000 },
+            { nama: "Vayron Stormreaver", posisi: "LM", ovr: 9999999999999780000000000, skill: 8888888888888670000000000, harga: 50000000000000000 },
+            { nama: "Ryvex Grimslash", posisi: "RM", ovr: 9999999999999770000000000, skill: 8888888888888660000000000, harga: 50000000000000000 },
+            
+            { nama: "Thronax Stonebreaker", posisi: "CB", ovr: 9999999999999760000000000, skill: 8888888888888650000000000, harga: 50000000000000000 },
+            { nama: "Gryvak Colossion", posisi: "CB", ovr: 9999999999999750000000000, skill: 8888888888888640000000000, harga: 50000000000000000 },
+            { nama: "Zerion Windclasp", posisi: "LB", ovr: 9999999999999740000000000, skill: 8888888888888630000000000, harga: 50000000000000000 },
+            { nama: "Kaizon Swiftbreaker", posisi: "RB", ovr: 9999999999999730000000000, skill: 8888888888888620000000000, harga: 50000000000000000 },
+            
+            { nama: "Orvath Chronotitan", posisi: "GK", ovr: 9999999999999720000000000, skill: 8888888888888610000000000, harga: 50000000000000000 }
+            ]
 }
 ];
 
