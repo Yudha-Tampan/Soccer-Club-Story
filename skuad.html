@@ -9,6 +9,16 @@
 <body class="bg-gray-900 text-white min-h-screen p-4">
   <div class="max-w-3xl mx-auto">
     <h1 class="text-2xl font-bold mb-2" id="judulSkuad">Skuad [Klub]</h1>
+     <div id="infoPelatih" class="bg-gray-800 p-2 rounded flex items-center gap-2">
+   <div class="w-10 h-10 rounded-full bg-gray-700 overflow-hidden">
+     <img src="default.webp" alt="Pelatih" class="w-full h-full object-cover" id="fotoPelatih">
+   </div>
+   <div>
+     <div class="font-semibold text-sm" id="namaPelatih">-</div>
+     <div class="text-xs text-gray-400" id="spesialisasiPelatih">-</div>
+   </div>
+   <button onclick="lepasPelatih()" class="mt-2 py-1 px-3 bg-red-700 hover:bg-red-600 rounded text-xs">Lepas Pelatih</button>
+ </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="daftarPemain"></div>
 
     <div class="mt-6 flex gap-3">
@@ -22,6 +32,20 @@
     document.addEventListener('DOMContentLoaded', () => {
       const game = muatGame();
       if (!game) return window.location.href = 'index.html';
+      
+  const pelatihEl = document.getElementById('infoPelatih');
+  const fotoEl = document.getElementById('fotoPelatih');
+  const namaEl = document.getElementById('namaPelatih');
+  const spesialisasiEl = document.getElementById('spesialisasiPelatih');
+
+  if (game.pelatihAktif) {
+    fotoEl.src = game.pelatihAktif.gambar || 'default.webp';
+    namaEl.textContent = game.pelatihAktif.nama;
+    spesialisasiEl.textContent = game.pelatihAktif.spesialisasi;
+    pelatihEl.classList.remove('hidden');
+  } else {
+    pelatihEl.classList.add('hidden');
+  }
 
       document.getElementById('judulSkuad').textContent = `Skuad ${game.klub.nama}`;
 
@@ -66,6 +90,19 @@
         location.reload();
       }
     }
+    function lepasPelatih() {
+  const game = muatGame();
+  if (!game.pelatihAktif) {
+    alert("Belum ada pelatih yang dipilih.");
+    return;
+  }
+  
+  if (confirm(`Yakin lepas pelatih ${game.pelatihAktif.nama}?`)) {
+    delete game.pelatihAktif;
+    simpanGame(game);
+    location.reload();
+  }
+}
   </script>
 </body>
 </html>

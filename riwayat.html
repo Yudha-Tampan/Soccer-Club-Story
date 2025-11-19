@@ -6,9 +6,7 @@
   <title>Riwayat - Soccer Club Story</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    .flag { width: 24px; height: 16px; display: inline-block; border: 1px solid #555; margin: 0 4px; }
-    .flag.kita { background: linear-gradient(to right, #0033a0 33%, #fff 33%, #fff 66%, #d90000 66%); }
-    .flag.lawan { background: linear-gradient(to right, #d90000 33%, #fff 33%, #fff 66%, #0033a0 66%); }
+    .flag { font-size: 1.5rem; }
   </style>
 </head>
 <body class="bg-gray-900 text-white min-h-screen p-4">
@@ -38,16 +36,21 @@
         return `
           <div class="bg-gray-800 p-4 rounded">
             <div class="flex justify-between items-center mb-2">
-              <div class="flex items-center">
-                <span class="flag ${r.kandang ? 'kita' : 'lawan'}"></span>
-                <strong>${r.kita.nama}</strong>
-              </div>
-              <div class="font-mono">${r.kita.skor} - ${r.lawan.skor}</div>
-              <div class="flex items-center">
-                <strong>${r.lawan.nama}</strong>
-                <span class="flag ${r.kandang ? 'lawan' : 'kita'}"></span>
-              </div>
-            </div>
+  <!-- Klub Anda -->
+  <div class="flex items-center gap-1">
+    <span class="flag">${r.kita.bendera}</span>
+    <strong class="whitespace-nowrap">${r.kita.nama}</strong>
+  </div>
+  
+  <!-- Skor -->
+  <div class="font-mono text-xl"> ${r.kita.skor} - ${r.lawan.skor} </div>
+  
+  <!-- Klub Lawan -->
+  <div class="flex items-center gap-1">
+    <strong class="whitespace-nowrap">${r.lawan.nama}</strong>
+    <span class="flag">${r.lawan.bendera}</span>
+  </div>
+</div>
             <div class="text-gray-400 text-sm mb-2">Tanggal: ${r.tanggal}</div>
             ${golList || '<div class="text-gray-500 text-sm ml-4">Tidak ada gol.</div>'}
           </div>

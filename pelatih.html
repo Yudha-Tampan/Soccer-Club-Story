@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Transfer Pelatih - Soccer Club Story</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen p-4">
+  <div class="max-w-3xl mx-auto">
+    <h1 class="text-2xl font-bold mb-2">Transfer Pelatih</h1>
+    <p class="text-gray-400 mb-4" id="saldoInfo">Saldo: $0</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="daftarPelatih"></div>
+
+    <div class="mt-6 flex gap-3">
+      <button onclick="window.history.back()" class="py-2 px-4 bg-gray-700 hover:bg-gray-600 rounded">← Kembali</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const game = muatGame();
+      if (!game) return window.location.href = 'index.html';
+
+      document.getElementById('saldoInfo').textContent = `Saldo: $${game.klub.saldo.toLocaleString()}`;
+
+      const container = document.getElementById('daftarPelatih');
+      container.innerHTML = pelatihList.map(p => `
+        <div class="bg-gray-800 p-3 rounded flex flex-col items-center">
+          <div class="w-16 h-16 rounded-full bg-gray-700 mb-2 overflow-hidden">
+            <img src="${p.gambar || 'default.webp'}" 
+                 alt="${p.nama}" 
+                 class="w-full h-full object-cover"
+                 onerror="this.src='default.webp'">
+          </div>
+          <div class="font-semibold text-center">${p.nama}</div>
+          <div class="text-sm text-gray-400">${p.spesialisasi}</div>
+          <div class="text-xs text-gray-500">OVR+${p.ovrBonus} • Skill+${p.skillBonus}</div>
+          <div class="text-xs text-gray-400 mt-1">${p.efek}</div>
+          <div class="mt-1 text-yellow-400 font-mono text-sm">$${p.harga.toLocaleString()}</div>
+          <button onclick="beliPelatih('${p.nama}', ${p.harga}, ${p.ovrBonus}, ${p.skillBonus}, '${p.nama}')" 
+                  class="mt-2 w-full py-1 bg-purple-700 hover:bg-purple-600 rounded text-xs">
+            Beli
+          </button>
+        </div>
+      `).join('');
+    });
+
+    function beliPelatih(nama, harga, ovrBonus, skillBonus, namaPelatihAsli) {
+  const game = muatGame();
+  if (!game) return;
+  
+  // Ambil data pelatih dari list
+  const pelatih = pelatihList.find(p => p.nama === namaPelatihAsli);
+  if (!pelatih) {
+    alert("Data pelatih tidak ditemukan.");
+    return;
+  }
+  
+  if (game.klub.saldo < harga) {
+    alert("Saldo tidak cukup!");
+    return;
+  }
+  
+  game.klub.saldo -= harga;
+  
+  // Simpan pelatih aktif
+  game.pelatihAktif = {
+    nama: pelatih.nama,
+    spesialisasi: pelatih.spesialisasi,
+    ovrBonus: pelatih.ovrBonus,
+    skillBonus: pelatih.skillBonus,
+    efek: pelatih.efek,
+    gambar: pelatih.gambar
+  };
+  
+  // Terapkan efek
+  if (ovrBonus > 0) {
+    game.skuad.forEach(p => p.ovr = Math.min(99, p.ovr + ovrBonus));
+  }
+  if (skillBonus > 0) {
+    game.skuad.forEach(p => p.skill = Math.min(99, p.skill + skillBonus));
+  }
+  
+  // Tambahkan pemain bonus
+  if (pelatih.bonus) {
+    pelatih.bonus.forEach(pemain => {
+      game.skuad.push({
+        ...pemain,
+        starter: false
+      });
+    });
+    alert(`Pelatih ${nama} dibeli!\nEfek: ${game.skuad.length - pelatih.bonus.length} pemain naik OVR/Skill, ${pelatih.bonus.length} pemain baru ditambahkan.`);
+  } else {
+    alert(`Pelatih ${nama} dibeli!\nEfek: Semua pemain naik OVR+${ovrBonus}/Skill+${skillBonus}.`);
+  }
+  
+  simpanGame(game);
+  location.reload();
+}
+  </script>
+</body>
+</html>

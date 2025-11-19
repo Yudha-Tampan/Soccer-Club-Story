@@ -155,7 +155,7 @@ const squadByClub = {
     // =====================
     // EROPA
     // =====================
-    
+
     // Arsenal
     arsenal: [
         { nama: "Bukayo Saka", posisi: "RW", harga: 85000000, ovr: 85, skill: 88, starter: true },
@@ -164,7 +164,7 @@ const squadByClub = {
         { nama: "William Saliba", posisi: "CB", harga: 70000000, ovr: 84, skill: 82, starter: true },
         { nama: "David Raya", posisi: "GK", harga: 35000000, ovr: 82, skill: 80, starter: true }
     ],
-    
+
     // Manchester United
     manutd: [
         { nama: "Bruno Fernandes", posisi: "AM", harga: 70000000, ovr: 85, skill: 87, starter: true },
@@ -173,7 +173,7 @@ const squadByClub = {
         { nama: "Lisandro Martínez", posisi: "CB", harga: 45000000, ovr: 83, skill: 80, starter: true },
         { nama: "André Onana", posisi: "GK", harga: 40000000, ovr: 82, skill: 81, starter: true }
     ],
-    
+
     // Manchester City
     mancity: [
         { nama: "Erling Haaland", posisi: "ST", harga: 150000000, ovr: 90, skill: 88, starter: true },
@@ -182,7 +182,7 @@ const squadByClub = {
         { nama: "Rúben Dias", posisi: "CB", harga: 60000000, ovr: 86, skill: 83, starter: true },
         { nama: "Ederson", posisi: "GK", harga: 50000000, ovr: 85, skill: 84, starter: true }
     ],
-    
+
     // Chelsea
     chelsea: [
         { nama: "Cole Palmer", posisi: "AM", harga: 60000000, ovr: 84, skill: 87, starter: true },
@@ -191,7 +191,7 @@ const squadByClub = {
         { nama: "Wesley Fofana", posisi: "CB", harga: 50000000, ovr: 83, skill: 81, starter: true },
         { nama: "Robert Sánchez", posisi: "GK", harga: 30000000, ovr: 82, skill: 80, starter: true }
     ],
-    
+
     // Liverpool
     liverpool: [
         { nama: "Mohamed Salah", posisi: "RW", harga: 75000000, ovr: 87, skill: 88, starter: true },
@@ -200,7 +200,7 @@ const squadByClub = {
         { nama: "Virgil van Dijk", posisi: "CB", harga: 60000000, ovr: 87, skill: 84, starter: true },
         { nama: "Alisson", posisi: "GK", harga: 55000000, ovr: 88, skill: 86, starter: true }
     ],
-    
+
     // Barcelona
     barcelona: [
         { nama: "Pedri", posisi: "CM", harga: 80000000, ovr: 85, skill: 92, starter: true },
@@ -209,7 +209,7 @@ const squadByClub = {
         { nama: "Ronald Araujo", posisi: "CB", harga: 60000000, ovr: 84, skill: 80, starter: true },
         { nama: "Ter Stegen", posisi: "GK", harga: 45000000, ovr: 85, skill: 86, starter: true }
     ],
-    
+
     // Real Madrid
     realmadrid: [
         { nama: "Jude Bellingham", posisi: "AM", harga: 100000000, ovr: 87, skill: 89, starter: true },
@@ -218,7 +218,7 @@ const squadByClub = {
         { nama: "Antonio Rüdiger", posisi: "CB", harga: 50000000, ovr: 85, skill: 82, starter: true },
         { nama: "Thibaut Courtois", posisi: "GK", harga: 60000000, ovr: 90, skill: 88, starter: true }
     ],
-    
+
     // Atletico Madrid
     atletico: [
         { nama: "Antoine Griezmann", posisi: "AM", harga: 45000000, ovr: 85, skill: 87, starter: true },
@@ -227,7 +227,7 @@ const squadByClub = {
         { nama: "José Giménez", posisi: "CB", harga: 35000000, ovr: 83, skill: 81, starter: true },
         { nama: "Jan Oblak", posisi: "GK", harga: 50000000, ovr: 87, skill: 85, starter: true }
     ],
-    
+
     // Bayern Munich
     bayern: [
         { nama: "Harry Kane", posisi: "ST", harga: 80000000, ovr: 85, skill: 84, starter: true },
@@ -236,7 +236,7 @@ const squadByClub = {
         { nama: "Dayot Upamecano", posisi: "CB", harga: 45000000, ovr: 82, skill: 78, starter: true },
         { nama: "Manuel Neuer", posisi: "GK", harga: 10000000, ovr: 82, skill: 83, starter: true }
     ],
-    
+
     // Borussia Dortmund
     dortmund: [
         { nama: "Julian Brandt", posisi: "AM", harga: 40000000, ovr: 83, skill: 85, starter: true },
@@ -245,7 +245,7 @@ const squadByClub = {
         { nama: "Mats Hummels", posisi: "CB", harga: 15000000, ovr: 83, skill: 80, starter: true },
         { nama: "Gregor Kobel", posisi: "GK", harga: 35000000, ovr: 84, skill: 82, starter: true }
     ],
-    
+
     // Bayer Leverkusen
     leverkusen: [
         { nama: "Florian Wirtz", posisi: "AM", harga: 85000000, ovr: 86, skill: 90, starter: true },
@@ -254,7 +254,7 @@ const squadByClub = {
         { nama: "Jonathan Tah", posisi: "CB", harga: 25000000, ovr: 82, skill: 80, starter: true },
         { nama: "Lukáš Hrádecký", posisi: "GK", harga: 15000000, ovr: 81, skill: 79, starter: true }
     ],
-    
+
     // AC Milan
     milan: [
         { nama: "Rafael Leão", posisi: "LW", harga: 75000000, ovr: 85, skill: 90, starter: true },
@@ -263,7 +263,7 @@ const squadByClub = {
         { nama: "Fikayo Tomori", posisi: "CB", harga: 45000000, ovr: 82, skill: 77, starter: true },
         { nama: "Mike Maignan", posisi: "GK", harga: 50000000, ovr: 85, skill: 82, starter: true }
     ],
-    
+
     // Inter Milan
     inter: [
         { nama: "Lautaro Martínez", posisi: "ST", harga: 80000000, ovr: 86, skill: 85, starter: true },
@@ -272,7 +272,7 @@ const squadByClub = {
         { nama: "Alessandro Bastoni", posisi: "CB", harga: 50000000, ovr: 84, skill: 82, starter: true },
         { nama: "Yann Sommer", posisi: "GK", harga: 15000000, ovr: 82, skill: 80, starter: true }
     ],
-    
+
     // Juventus
     juventus: [
         { nama: "Dusan Vlahović", posisi: "ST", harga: 65000000, ovr: 84, skill: 83, starter: true },
@@ -281,12 +281,12 @@ const squadByClub = {
         { nama: "Danilo", posisi: "CB", harga: 20000000, ovr: 81, skill: 79, starter: true },
         { nama: "Wojciech Szczęsny", posisi: "GK", harga: 25000000, ovr: 83, skill: 81, starter: true }
     ],
-    
-    
+
+
     // =====================
     // ASIA
     // =====================
-    
+
     // Al Hilal (KSA)
     alhilal: [
         { nama: "Neymar Jr", posisi: "LW", harga: 60000000, ovr: 85, skill: 92, starter: true },
@@ -295,7 +295,7 @@ const squadByClub = {
         { nama: "Kalidou Koulibaly", posisi: "CB", harga: 30000000, ovr: 82, skill: 80, starter: true },
         { nama: "Bono", posisi: "GK", harga: 20000000, ovr: 82, skill: 81, starter: true }
     ],
-    
+
     // Al Sadd (Qatar)
     al_sadd: [
         { nama: "Baghdad Bounedjah", posisi: "ST", harga: 8000000, ovr: 78, skill: 79, starter: true },
@@ -304,7 +304,7 @@ const squadByClub = {
         { nama: "Tarek Salman", posisi: "CB", harga: 3000000, ovr: 76, skill: 74, starter: true },
         { nama: "Saad Al Sheeb", posisi: "GK", harga: 2000000, ovr: 75, skill: 73, starter: true }
     ],
-    
+
     // Al Duhail (Qatar)
     al_duhail: [
         { nama: "Yacine Brahimi", posisi: "RW", harga: 10000000, ovr: 80, skill: 84, starter: true },
@@ -313,7 +313,7 @@ const squadByClub = {
         { nama: "Pedro Miguel", posisi: "CB", harga: 2500000, ovr: 75, skill: 73, starter: true },
         { nama: "Alireza Beiranvand", posisi: "GK", harga: 3000000, ovr: 77, skill: 76, starter: true }
     ],
-    
+
     // Ulsan Hyundai (Korea)
     ulsan: [
         { nama: "Joo Min-kyu", posisi: "ST", harga: 2500000, ovr: 75, skill: 74, starter: true },
@@ -322,7 +322,7 @@ const squadByClub = {
         { nama: "Valeri Qazaishvili", posisi: "AM", harga: 3000000, ovr: 78, skill: 79, starter: true },
         { nama: "Jo Hyeon-woo", posisi: "GK", harga: 2500000, ovr: 77, skill: 76, starter: true }
     ],
-    
+
     // Yokohama F. Marinos (Jepang)
     yokohama: [
         { nama: "Anderson Lopes", posisi: "ST", harga: 3500000, ovr: 78, skill: 79, starter: true },
@@ -331,7 +331,7 @@ const squadByClub = {
         { nama: "Eduardo", posisi: "CB", harga: 1500000, ovr: 74, skill: 72, starter: true },
         { nama: "William Popp", posisi: "GK", harga: 1200000, ovr: 72, skill: 70, starter: true }
     ],
-    
+
     // Kawasaki Frontale
     kawasaki: [
         { nama: "Leandro Damião", posisi: "ST", harga: 2000000, ovr: 76, skill: 77, starter: true },
@@ -340,7 +340,7 @@ const squadByClub = {
         { nama: "Tatsuya Hasegawa", posisi: "CM", harga: 1200000, ovr: 74, skill: 75, starter: true },
         { nama: "Jung Sung-ryong", posisi: "GK", harga: 1000000, ovr: 73, skill: 72, starter: true }
     ],
-    
+
     // Urawa Red Diamonds
     urawa: [
         { nama: "Tomoaki Makino", posisi: "CB", harga: 800000, ovr: 74, skill: 72, starter: true },
@@ -349,7 +349,7 @@ const squadByClub = {
         { nama: "Yuki Abe", posisi: "CM", harga: 500000, ovr: 72, skill: 73, starter: true },
         { nama: "Shusaku Nishikawa", posisi: "GK", harga: 600000, ovr: 73, skill: 72, starter: true }
     ],
-    
+
     // Kashima Antlers
     kashima: [
         { nama: "Everaldo", posisi: "LW", harga: 2500000, ovr: 77, skill: 78, starter: true },
@@ -358,7 +358,7 @@ const squadByClub = {
         { nama: "Kwoun Sun-tae", posisi: "CB", harga: 1000000, ovr: 73, skill: 72, starter: true },
         { nama: "Kwoun Sun-tae", posisi: "GK", harga: 800000, ovr: 72, skill: 71, starter: true }
     ],
-    
+
     // Jeonbuk Hyundai Motors
     jeonbuk: [
         { nama: "Gustavo", posisi: "ST", harga: 3000000, ovr: 78, skill: 79, starter: true },
@@ -367,7 +367,7 @@ const squadByClub = {
         { nama: "Hong Jeong-ho", posisi: "CB", harga: 1800000, ovr: 76, skill: 75, starter: true },
         { nama: "Song Bum-keun", posisi: "GK", harga: 1500000, ovr: 75, skill: 74, starter: true }
     ],
-    
+
     // FC Seoul
     seoulfc: [
         { nama: "Cho Young-wook", posisi: "ST", harga: 1500000, ovr: 74, skill: 75, starter: true },
@@ -376,7 +376,7 @@ const squadByClub = {
         { nama: "Yun Il-lok", posisi: "RW", harga: 1200000, ovr: 74, skill: 76, starter: true },
         { nama: "Yang Han-been", posisi: "GK", harga: 700000, ovr: 71, skill: 70, starter: true }
     ],
-    
+
     // Shanghai Port
     shanghaiport: [
         { nama: "Wu Lei", posisi: "ST", harga: 5000000, ovr: 78, skill: 79, starter: true },
@@ -385,7 +385,7 @@ const squadByClub = {
         { nama: "Zhang Linpeng", posisi: "CB", harga: 2000000, ovr: 75, skill: 74, starter: true },
         { nama: "Yan Junling", posisi: "GK", harga: 1500000, ovr: 74, skill: 73, starter: true }
     ],
-    
+
     // Beijing Guoan
     beijingguoan: [
         { nama: "Zhang Yuning", posisi: "ST", harga: 3000000, ovr: 76, skill: 77, starter: true },
@@ -394,7 +394,7 @@ const squadByClub = {
         { nama: "Jin Pengxiang", posisi: "CB", harga: 1200000, ovr: 73, skill: 72, starter: true },
         { nama: "Hou Sen", posisi: "GK", harga: 1000000, ovr: 72, skill: 71, starter: true }
     ],
-    
+
     // Shandong Taishan
     shandong: [
         { nama: "Graziano Pellè", posisi: "ST", harga: 2500000, ovr: 77, skill: 78, starter: true },
@@ -403,7 +403,7 @@ const squadByClub = {
         { nama: "Shi Ke", posisi: "CB", harga: 1500000, ovr: 75, skill: 74, starter: true },
         { nama: "Wang Dalei", posisi: "GK", harga: 1200000, ovr: 74, skill: 73, starter: true }
     ],
-    
+
     // Al Ain (UAE)
     alain: [
         { nama: "Kodjo Laba", posisi: "ST", harga: 6000000, ovr: 79, skill: 80, starter: true },
@@ -412,7 +412,7 @@ const squadByClub = {
         { nama: "Khalid Al-Blooshi", posisi: "CB", harga: 1200000, ovr: 73, skill: 71, starter: true },
         { nama: "Khalid Eisa", posisi: "GK", harga: 1500000, ovr: 75, skill: 74, starter: true }
     ],
-    
+
     // Shabab Al Ahli (UAE)
     shabab_ahli: [
         { nama: "Igor Coronado", posisi: "AM", harga: 4000000, ovr: 78, skill: 80, starter: true },
@@ -421,7 +421,7 @@ const squadByClub = {
         { nama: "Ahmed Abbas", posisi: "CB", harga: 1000000, ovr: 73, skill: 72, starter: true },
         { nama: "Majid Naser", posisi: "GK", harga: 1200000, ovr: 74, skill: 73, starter: true }
     ],
-    
+
     // Buriram United (Thailand)
     buriram: [
         { nama: "Supachok Sarachat", posisi: "AM", harga: 2000000, ovr: 76, skill: 78, starter: true },
@@ -430,7 +430,7 @@ const squadByClub = {
         { nama: "Theerathon Bunmathan", posisi: "LB", harga: 1000000, ovr: 74, skill: 75, starter: true },
         { nama: "Siwarak Tedsungnoen", posisi: "GK", harga: 700000, ovr: 72, skill: 71, starter: true }
     ],
-    
+
     // Bangkok United
     bangkok_utd: [
         { nama: "Peerapong Panyanum", posisi: "ST", harga: 800000, ovr: 72, skill: 73, starter: true },
@@ -439,7 +439,7 @@ const squadByClub = {
         { nama: "Tristan Do", posisi: "RB", harga: 1000000, ovr: 74, skill: 73, starter: true },
         { nama: "Kittipong Phuthawchueak", posisi: "GK", harga: 600000, ovr: 71, skill: 70, starter: true }
     ],
-    
+
     // Johor Darul Ta'zim (Malaysia)
     jdt: [
         { nama: "Bergson", posisi: "ST", harga: 3000000, ovr: 78, skill: 79, starter: true },
@@ -448,7 +448,7 @@ const squadByClub = {
         { nama: "Jordi Amat", posisi: "CB", harga: 2000000, ovr: 75, skill: 73, starter: true },
         { nama: "Syihan Hazmi", posisi: "GK", harga: 1500000, ovr: 74, skill: 72, starter: true }
     ],
-    
+
     // Selangor FC
     selangor: [
         { nama: "Rufino Segovia", posisi: "ST", harga: 500000, ovr: 72, skill: 73, starter: true },
@@ -457,7 +457,7 @@ const squadByClub = {
         { nama: "Azam Azmi", posisi: "CB", harga: 250000, ovr: 69, skill: 68, starter: true },
         { nama: "Haziq Nadzli", posisi: "GK", harga: 200000, ovr: 70, skill: 69, starter: true }
     ],
-    
+
     // Persija Jakarta
     persija: [
         { nama: "Marko Šimić", posisi: "ST", harga: 700000, ovr: 75, skill: 76, starter: true },
@@ -466,7 +466,7 @@ const squadByClub = {
         { nama: "Riko Simanjuntak", posisi: "RW", harga: 450000, ovr: 73, skill: 78, starter: true },
         { nama: "Andritany Ardhiyasa", posisi: "GK", harga: 400000, ovr: 72, skill: 71, starter: true }
     ],
-    
+
     // Persib Bandung
     persib: [
         { nama: "Ciro Alves", posisi: "LW", harga: 650000, ovr: 75, skill: 77, starter: true },
@@ -475,7 +475,7 @@ const squadByClub = {
         { nama: "Nick Kuipers", posisi: "CB", harga: 500000, ovr: 74, skill: 72, starter: true },
         { nama: "Teja Paku Alam", posisi: "GK", harga: 350000, ovr: 72, skill: 71, starter: true }
     ],
-    
+
     // Bali United
     baliutd: [
         { nama: "Ilija Spasojević", posisi: "ST", harga: 500000, ovr: 75, skill: 74, starter: true },
@@ -484,7 +484,7 @@ const squadByClub = {
         { nama: "Jajang Mulyana", posisi: "CB", harga: 300000, ovr: 72, skill: 70, starter: true },
         { nama: "Adilson Maringá", posisi: "GK", harga: 350000, ovr: 74, skill: 73, starter: true }
     ],
-    
+
     // PSM Makassar
     psm: [
         { nama: "Wiljan Pluim", posisi: "AM", harga: 400000, ovr: 73, skill: 75, starter: true },
@@ -493,7 +493,7 @@ const squadByClub = {
         { nama: "Hussein El Dor", posisi: "CB", harga: 250000, ovr: 70, skill: 69, starter: true },
         { nama: "Rizky Dwi Febrianto", posisi: "GK", harga: 200000, ovr: 71, skill: 70, starter: true }
     ],
-    
+
     // Persebaya Surabaya
     persebaya: [
         { nama: "Mario Jardel", posisi: "ST", harga: 300000, ovr: 72, skill: 73, starter: true },
@@ -502,7 +502,7 @@ const squadByClub = {
         { nama: "Richardo Ferreira", posisi: "CB", harga: 200000, ovr: 71, skill: 70, starter: true },
         { nama: "Ernando Ari", posisi: "GK", harga: 250000, ovr: 72, skill: 71, starter: true }
     ],
-    
+
     // Arema FC
     arema: [
         { nama: "Carlos Fortes", posisi: "ST", harga: 250000, ovr: 71, skill: 72, starter: true },
@@ -511,7 +511,7 @@ const squadByClub = {
         { nama: "Ikhfanul Alam", posisi: "RB", harga: 150000, ovr: 68, skill: 69, starter: true },
         { nama: "Aji Kusuma", posisi: "GK", harga: 120000, ovr: 69, skill: 68, starter: true }
     ],
-    
+
     // Madura United
     madura: [
         { nama: "Beto Gonçalves", posisi: "ST", harga: 300000, ovr: 72, skill: 73, starter: true },
@@ -520,7 +520,7 @@ const squadByClub = {
         { nama: "Evan Dimas", posisi: "CM", harga: 220000, ovr: 71, skill: 73, starter: true },
         { nama: "Mohammad Ridho", posisi: "GK", harga: 180000, ovr: 70, skill: 69, starter: true }
     ],
-    
+
     // Borneo FC
     borneo: [
         { nama: "Matheus Vivian", posisi: "CB", harga: 200000, ovr: 70, skill: 69, starter: true },
@@ -529,7 +529,7 @@ const squadByClub = {
         { nama: "Francisco Silva", posisi: "ST", harga: 250000, ovr: 72, skill: 73, starter: true },
         { nama: "Rusdi Suparman", posisi: "GK", harga: 150000, ovr: 69, skill: 68, starter: true }
     ],
-    
+
     // PSIS Semarang
     psis: [
         { nama: "Taisei Marukawa", posisi: "LW", harga: 300000, ovr: 73, skill: 75, starter: true },
@@ -538,7 +538,7 @@ const squadByClub = {
         { nama: "Riky Ridho", posisi: "CB", harga: 150000, ovr: 68, skill: 67, starter: true },
         { nama: "Jandia Eka Putra", posisi: "GK", harga: 120000, ovr: 69, skill: 68, starter: true }
     ],
-    
+
     // Persik Kediri
     persik: [
         { nama: "Yusuf Efendi", posisi: "ST", harga: 150000, ovr: 68, skill: 69, starter: true },
@@ -550,80 +550,184 @@ const squadByClub = {
 };
 
 const transferList = [
-    // ========== TIER DEWA ==========
-    { nama: "Kylian Mbappe", posisi: "ST", harga: 160000000, klubSebelumnya: "PSG", ovr: 92 },
-    { nama: "Erling Haaland", posisi: "ST", harga: 180000000, klubSebelumnya: "Man City", ovr: 93 },
-    { nama: "Lionel Messi", posisi: "RW", harga: 35000000, klubSebelumnya: "Inter Miami", ovr: 90 },
-    { nama: "Kevin De Bruyne", posisi: "CM", harga: 85000000, klubSebelumnya: "Man City", ovr: 90 },
-    { nama: "Vinicius Jr", posisi: "LW", harga: 150000000, klubSebelumnya: "Real Madrid", ovr: 89 },
-    { nama: "Rodri", posisi: "CM", harga: 100000000, klubSebelumnya: "Man City", ovr: 89 },
-    { nama: "Courtois", posisi: "GK", harga: 60000000, klubSebelumnya: "Real Madrid", ovr: 90 },
+// ========== TIER ULTRA INFINITE ==========
+{ nama: "Omega Eternum", posisi: "ST", harga: 999999999999999999999999999999, klubSebelumnya: "Infinite Plane", ovr: 100000000000000000000 },
+{ nama: "Aetherion Omniverse", posisi: "AM", harga: 999999999999999999999999999998, klubSebelumnya: "Infinite Plane", ovr: 100000000000000000000 },
+{ nama: "Nyx Voidwalker", posisi: "LW", harga: 999999999999999999999999999997, klubSebelumnya: "Infinite Plane", ovr: 100000000000000000000 },
+{ nama: "Kairos Transcendent", posisi: "CM", harga: 999999999999999999999999999996, klubSebelumnya: "Infinite Plane", ovr: 100000000000000000000 },
+{ nama: "Luminar Apex", posisi: "CB", harga: 999999999999999999999999999995, klubSebelumnya: "Infinite Plane", ovr: 100000000000000000000 },
+{ nama: "Eternius Prime", posisi: "GK", harga: 999999999999999999999999999994, klubSebelumnya: "Infinite Plane", ovr: 100000000000000000000 },
+{ nama: "Veylar Omnipotent", posisi: "RW", harga: 999999999999999999999999999993, klubSebelumnya: "Infinite Plane", ovr: 100000000000000000000 },
+{ nama: "Zerathion Cosmos", posisi: "LB", harga: 999999999999999999999999999992, klubSebelumnya: "Infinite Plane", ovr: 100000000000000000000 },
+    // ========== TIER MITOLOGI ==========
+{ nama: "Pele (Prime)", posisi: "ST", harga: 400000000, klubSebelumnya: "Santos", ovr: 96, gambar: "p.jpg" },
+{ nama: "Diego Maradona (Prime)", posisi: "AM", harga: 420000000, klubSebelumnya: "Napoli", ovr: 97, gambar: "maradona.jpg"},
+{ nama: "Johan Cruyff (Prime)", posisi: "AM", harga: 380000000, klubSebelumnya: "Ajax", ovr: 95, gambar: "cruyff.jpg"},
+{ nama: "George Best (Prime)", posisi: "RW", harga: 300000000, klubSebelumnya: "Man United", ovr: 94, gambar: "best.jpg" },
+{ nama: "Marco Van Basten (Prime)", posisi: "ST", harga: 310000000, klubSebelumnya: "AC Milan", ovr: 94, gambar: "marco.jpg"},
+{ nama: "Lev Yashin (Prime)", posisi: "GK", harga: 280000000, klubSebelumnya: "Dynamo Moscow", ovr: 95, gambar: "lev.jpg" },
+    // ========== TIER LEGEND ABSOLUT ==========
+{ nama: "Ronaldo Nazario (Prime)", posisi: "ST", harga: 300000000, klubSebelumnya: "Inter Milan", ovr: 95, gambar: "nazario.jpg" },
+{ nama: "Ronaldinho (Prime)", posisi: "AM", harga: 250000000, klubSebelumnya: "Barcelona", ovr: 94, gambar: "ronal.jpg" },
+{ nama: "Zinedine Zidane (Prime)", posisi: "CM", harga: 220000000, klubSebelumnya: "Real Madrid", ovr: 94, gambar: "zidane.jpg" },
+{ nama: "Thierry Henry (Prime)", posisi: "ST", harga: 200000000, klubSebelumnya: "Arsenal", ovr: 93, gambar: "henry.jpg" },
+{ nama: "Kaka (Prime)", posisi: "AM", harga: 180000000, klubSebelumnya: "AC Milan", ovr: 92, gambar: "kaka.jpg" },
+{ nama: "Xavi Hernandez (Prime)", posisi: "CM", harga: 160000000, klubSebelumnya: "Barcelona", ovr: 92, gambar: "xavi.jpg" },
+{ nama: "Andres Iniesta (Prime)", posisi: "CM", harga: 160000000, klubSebelumnya: "Barcelona", ovr: 92, gambar: "iniesta.jpg" },
+{ nama: "Paolo Maldini (Prime)", posisi: "CB", harga: 170000000, klubSebelumnya: "AC Milan", ovr: 94, gambar: "maldini.jpg" },
+{ nama: "Oliver Kahn (Prime)", posisi: "GK", harga: 150000000, klubSebelumnya: "Bayern Munich", ovr: 93, gambar: "kahn.jpg" }
+];
+// Daftar pelatih
+const pelatihList = [
+    {
+        nama: "Pep Guardiola",
+        spesialisasi: "Tiki-Taka",
+        harga: 50000000,
+        ovrBonus: 3,
+        skillBonus: 2,
+        efek: "Dapatkan 3 pemain muda OVR 80",
+        gambar: "pep.jpg",
+        bonus: [
+            { nama: "Pablo Gavi", posisi: "CM", ovr: 80, skill: 82, harga: 3000000 },
+            { nama: "Pedri", posisi: "CM", ovr: 81, skill: 83, harga: 3500000 },
+            { nama: "Lamine Yamal", posisi: "RW", ovr: 80, skill: 85, harga: 5000000 }
+        ]
+    },
+    {
+        nama: "Carlo Ancelotti",
+        spesialisasi: "Penyeimbang",
+        harga: 40000000,
+        ovrBonus: 2,
+        skillBonus: 1,
+        efek: "OVR semua pemain naik 1",
+        gambar: "ancelotti.jpg",
+        bonus: [
+            { nama: "Eduardo Camavinga", posisi: "CM", ovr: 82, skill: 84, harga: 4500000 }
+        ]
+    },
+    {
+        nama: "Jürgen Klopp",
+        spesialisasi: "Gegenpress",
+        harga: 45000000,
+        ovrBonus: 2,
+        skillBonus: 2,
+        efek: "Dapatkan 2 pemain dengan pressing tinggi",
+        gambar: "klopp.jpg",
+        bonus: [
+            { nama: "Luis Díaz", posisi: "LW", ovr: 82, skill: 85, harga: 5500000 },
+            { nama: "Darwin Núñez", posisi: "ST", ovr: 81, skill: 83, harga: 5000000 }
+        ]
+    },
+    {
+        nama: "Zinedine Zidane",
+        spesialisasi: "Playmaker",
+        harga: 60000000,
+        ovrBonus: 4,
+        skillBonus: 3,
+        efek: "Dapatkan 2 legenda OVR 90",
+        gambar: "zidane.jpg",
+        bonus: [
+            { nama: "Zidane (Prime)", posisi: "AM", ovr: 92, skill: 94, harga: 15000000 },
+            { nama: "Ronaldo Nazário", posisi: "ST", ovr: 91, skill: 93, harga: 15000000 }
+        ]
+    },
+    {
+        nama: "Thomas Tuchel",
+        spesialisasi: "Defensif",
+        harga: 35000000,
+        ovrBonus: 1,
+        skillBonus: 3,
+        efek: "Dapatkan 2 defender elite",
+        gambar: "tuchel.jpg",
+        bonus: [
+            { nama: "Matthijs de Ligt", posisi: "CB", ovr: 84, skill: 82, harga: 7000000 },
+            { nama: "Alphonso Davies", posisi: "LB", ovr: 84, skill: 88, harga: 9000000 }
+        ]
+    },
     
-    // ========== BINTANG TOP EROPA ==========
-    { nama: "Salah", posisi: "RW", harga: 80000000, klubSebelumnya: "Liverpool", ovr: 89 },
-    { nama: "Van Dijk", posisi: "CB", harga: 65000000, klubSebelumnya: "Liverpool", ovr: 88 },
-    { nama: "Bellingham", posisi: "CM", harga: 120000000, klubSebelumnya: "Real Madrid", ovr: 88 },
-    { nama: "Osimhen", posisi: "ST", harga: 110000000, klubSebelumnya: "Napoli", ovr: 88 },
-    { nama: "Araujo", posisi: "CB", harga: 60000000, klubSebelumnya: "Barcelona", ovr: 84 },
-    { nama: "Lautaro Martinez", posisi: "ST", harga: 95000000, klubSebelumnya: "Inter", ovr: 87 },
+    // ⭐ PELATIH BARU DIMULAI DARI SINI ⭐
     
-    // ========== RISING STAR ==========
-    { nama: "Lamine Yamal", posisi: "RW", harga: 65000000, klubSebelumnya: "Barcelona", ovr: 84 },
-    { nama: "Endrick", posisi: "ST", harga: 45000000, klubSebelumnya: "Palmeiras", ovr: 80 },
-    { nama: "Gavi", posisi: "CM", harga: 70000000, klubSebelumnya: "Barcelona", ovr: 85 },
-    { nama: "Musiala", posisi: "AM", harga: 90000000, klubSebelumnya: "Bayern", ovr: 86 },
-    { nama: "Florian Wirtz", posisi: "AM", harga: 85000000, klubSebelumnya: "Leverkusen", ovr: 86 },
-    
-    // ========== ASIAN SUPERSTAR ==========
-    { nama: "Son Heung-Min", posisi: "LW", harga: 70000000, klubSebelumnya: "Tottenham", ovr: 88 },
-    { nama: "Kim Min-jae", posisi: "CB", harga: 50000000, klubSebelumnya: "Bayern", ovr: 85 },
-    { nama: "Take Kubo", posisi: "RW", harga: 45000000, klubSebelumnya: "Real Sociedad", ovr: 82 },
-    { nama: "Almoez Ali", posisi: "ST", harga: 10000000, klubSebelumnya: "Al-Duhail", ovr: 78 },
-    
-    // ========== PEMAIN TOP LIGA INDONESIA ==========
-    { nama: "Ciro Alves", posisi: "LW", harga: 650000, klubSebelumnya: "Persib", ovr: 75 },
-    { nama: "Marko Simic", posisi: "ST", harga: 700000, klubSebelumnya: "Persija", ovr: 75 },
-    { nama: "Marc Klok", posisi: "CM", harga: 550000, klubSebelumnya: "Persib", ovr: 75 },
-    { nama: "Egy Maulana Vikri", posisi: "LW", harga: 350000, klubSebelumnya: "Dewa United", ovr: 73 },
-    
-    // ========== RANDOM GENERASI BARU (REGEN STYLE) ==========
-    { nama: "Ryo Taniguchi", posisi: "RW", harga: 1200000, klubSebelumnya: "Free Agent", ovr: 78 },
-    { nama: "Miguel Santoro", posisi: "AM", harga: 2500000, klubSebelumnya: "River Plate", ovr: 80 },
-    { nama: "Leonard Hofstad", posisi: "CB", harga: 1800000, klubSebelumnya: "RB Salzburg", ovr: 77 },
-    { nama: "Matteo Ravelli", posisi: "CM", harga: 3000000, klubSebelumnya: "Torino", ovr: 79 },
-    { nama: "Kwame Adutwum", posisi: "ST", harga: 900000, klubSebelumnya: "Hearts of Oak", ovr: 76 },
-    { nama: "Javier Montecillo", posisi: "RB", harga: 1500000, klubSebelumnya: "Getafe", ovr: 78 },
-    { nama: "Hiroshi Tanaka", posisi: "GK", harga: 1000000, klubSebelumnya: "Sagan Tosu", ovr: 75 },
-    { nama: "Pedro Mendez", posisi: "LW", harga: 2000000, klubSebelumnya: "Sporting CP", ovr: 79 },
-    
-    // ========== FREE AGENT BINTANG TUA ==========
-    { nama: "Sergio Ramos", posisi: "CB", harga: 2000000, klubSebelumnya: "Sevilla", ovr: 80 },
-    { nama: "Luka Modric", posisi: "CM", harga: 3000000, klubSebelumnya: "Real Madrid", ovr: 83 },
-    { nama: "Thiago Silva", posisi: "CB", harga: 1800000, klubSebelumnya: "Chelsea", ovr: 80 },
-    { nama: "David De Gea", posisi: "GK", harga: 2500000, klubSebelumnya: "Man United", ovr: 82 },
-    
-    // ========== FREE AGENT RANDOM ==========
-    { nama: "Alex Duarte", posisi: "LB", harga: 900000, klubSebelumnya: "Free Agent", ovr: 74 },
-    { nama: "Sandro Villalba", posisi: "ST", harga: 700000, klubSebelumnya: "Free Agent", ovr: 73 },
-    { nama: "Mohammed Idrissi", posisi: "CM", harga: 800000, klubSebelumnya: "Free Agent", ovr: 74 },
-    { nama: "Daniel Okoro", posisi: "CB", harga: 600000, klubSebelumnya: "Free Agent", ovr: 72 },
-    { nama: "Ivan Petrovic", posisi: "GK", harga: 500000, klubSebelumnya: "Free Agent", ovr: 71 },
-    { nama: "Adrian Kozlowski", posisi: "RW", harga: 950000, klubSebelumnya: "Free Agent", ovr: 75 },
-    
-    // ========== STRIKER TAMBAHAN ==========
-    { nama: "Jonathan David", posisi: "ST", harga: 60000000, klubSebelumnya: "Lille", ovr: 84 },
-    { nama: "Dusan Vlahovic", posisi: "ST", harga: 75000000, klubSebelumnya: "Juventus", ovr: 85 },
-    { nama: "Sebastian Haller", posisi: "ST", harga: 30000000, klubSebelumnya: "Dortmund", ovr: 82 },
-    
-    // ========== MIDFIELDER TAMBAHAN ==========
-    { nama: "Nicolo Barella", posisi: "CM", harga: 80000000, klubSebelumnya: "Inter", ovr: 87 },
-    { nama: "Declan Rice", posisi: "CM", harga: 90000000, klubSebelumnya: "Arsenal", ovr: 87 },
-    { nama: "Martin Odegaard", posisi: "AM", harga: 75000000, klubSebelumnya: "Arsenal", ovr: 86 },
-    
-    // ========== DEFENDER TAMBAHAN ==========
-    { nama: "Jules Kounde", posisi: "CB", harga: 50000000, klubSebelumnya: "Barcelona", ovr: 84 },
-    { nama: "Pau Torres", posisi: "CB", harga: 40000000, klubSebelumnya: "Aston Villa", ovr: 83 },
-    { nama: "Reece James", posisi: "RB", harga: 60000000, klubSebelumnya: "Chelsea", ovr: 84 }
+    {
+        nama: "José Mourinho",
+        spesialisasi: "Park The Bus",
+        harga: 55000000,
+        ovrBonus: 2,
+        skillBonus: 3,
+        efek: "Dapatkan 3 defender keras kepala",
+        gambar: "mourinho.jpg",
+        bonus: [
+            { nama: "Sergio Ramos", posisi: "CB", ovr: 88, skill: 90, harga: 12000000 },
+            { nama: "Pepe", posisi: "CB", ovr: 86, skill: 85, harga: 8000000 },
+            { nama: "João Cancelo", posisi: "RB", ovr: 85, skill: 87, harga: 9500000 }
+        ]
+    },
+    {
+        nama: "Diego Simeone",
+        spesialisasi: "Ultra Defensif",
+        harga: 48000000,
+        ovrBonus: 1,
+        skillBonus: 4,
+        efek: "Dapatkan 2 pemain bertahan agresif",
+        gambar: "simeone.jpg",
+        bonus: [
+            { nama: "José Giménez", posisi: "CB", ovr: 84, skill: 80, harga: 7500000 },
+            { nama: "Koke", posisi: "CM", ovr: 83, skill: 84, harga: 6000000 }
+        ]
+    },
+    {
+        nama: "Luis Enrique",
+        spesialisasi: "Attack Control",
+        harga: 52000000,
+        ovrBonus: 3,
+        skillBonus: 2,
+        efek: "Dapatkan 3 pemain menyerang kreatif",
+        gambar: "enrique.jpg",
+        bonus: [
+            { nama: "Neymar Jr", posisi: "LW", ovr: 89, skill: 93, harga: 20000000 },
+            { nama: "Ousmane Dembélé", posisi: "RW", ovr: 84, skill: 90, harga: 10000000 },
+            { nama: "Marco Asensio", posisi: "RW", ovr: 82, skill: 82, harga: 6000000 }
+        ]
+    },
+    {
+        nama: "Xavi Hernandez",
+        spesialisasi: "Positional Play",
+        harga: 50000000,
+        ovrBonus: 3,
+        skillBonus: 2,
+        efek: "Dapatkan 2 maestro passing",
+        gambar: "xavi.jpg",
+        bonus: [
+            { nama: "Ilkay Gündoğan", posisi: "CM", ovr: 85, skill: 87, harga: 9000000 },
+            { nama: "Frenkie de Jong", posisi: "CM", ovr: 86, skill: 88, harga: 11000000 }
+        ]
+    },
+    {
+        nama: "Hansi Flick",
+        spesialisasi: "High Line",
+        harga: 52000000,
+        ovrBonus: 2,
+        skillBonus: 3,
+        efek: "Dapatkan 2 pemain cepat OVR 85",
+        gambar: "flick.jpg",
+        bonus: [
+            { nama: "Leroy Sané", posisi: "LW", ovr: 85, skill: 88, harga: 10000000 },
+            { nama: "Kingsley Coman", posisi: "RW", ovr: 85, skill: 89, harga: 10000000 }
+        ]
+    },
+    {
+    nama: "Marcelo Bielsa",
+    spesialisasi: "Tactical Overload",
+    harga: 9999999999999999999999,
+    ovrBonus: 120000000000000000,
+    skillBonus: 140000000000000000,
+    efek: "Formasi bisa dibuat tanpa batas, pemain bisa punya 3 posisi utama sekaligus.",
+    gambar: "bielsa.jpg",
+    bonus: [
+    { nama: "Aurelio Vortex", posisi: "CM", ovr: 9000000000000, skill: 9500000000000000, harga: 500000000000000000 },
+    { nama: "Ragnar Blitz", posisi: "RW", ovr: 8800000000000, skill: 910000000000000, harga: 45000000000000000000 },
+    { nama: "Kaizen Raptura", posisi: "ST", ovr: 92000000000000000, skill: 94000000000000000, harga: 5500000000000000000 }
+]
+}
 ];
 
 const lawanList = [
@@ -692,7 +796,78 @@ function updateUIBahasa() {
         btn.textContent = t('bahasa');
     }
 }
+// Hitung kebutuhan posisi berdasarkan formasi
+function hitungFormasi(formasi) {
+    const [def, mid, att] = formasi.split('-').map(Number);
+    return {
+        GK: 1,
+        DEF: def,
+        MID: mid,
+        ATT: att
+    };
+}
 
+// Pilih 11 starter otomatis berdasarkan formasi
+function aturStarterOtomatis(skuad, formasi) {
+    const kebutuhan = hitungFormasi(formasi);
+    const starter = [];
+    const cadangan = [...skuad];
+    
+    // 1. Pilih 1 GK
+    const gk = cadangan.find(p => p.posisi === "GK");
+    if (gk) {
+        gk.starter = true;
+        starter.push(gk);
+        cadangan.splice(cadangan.indexOf(gk), 1);
+    }
+    
+    // 2. Pilih Defender (CB, RB, LB)
+    const defenders = cadangan.filter(p =>
+        p.posisi === "CB" || p.posisi === "RB" || p.posisi === "LB" || p.posisi === "WB"
+    ).sort((a, b) => b.ovr - a.ovr);
+    for (let i = 0; i < kebutuhan.DEF && defenders.length > 0; i++) {
+        const p = defenders.shift();
+        p.starter = true;
+        starter.push(p);
+        cadangan.splice(cadangan.findIndex(x => x === p), 1);
+    }
+    
+    // 3. Pilih Midfielder (CM, AM, DM, RW, LW)
+    const midfielders = cadangan.filter(p =>
+        p.posisi === "CM" || p.posisi === "AM" || p.posisi === "DM" ||
+        p.posisi === "RW" || p.posisi === "LW" || p.posisi === "WM"
+    ).sort((a, b) => b.ovr - a.ovr);
+    for (let i = 0; i < kebutuhan.MID && midfielders.length > 0; i++) {
+        const p = midfielders.shift();
+        p.starter = true;
+        starter.push(p);
+        cadangan.splice(cadangan.findIndex(x => x === p), 1);
+    }
+    
+    // 4. Pilih Attacker (ST, CF, WF)
+    const attackers = cadangan.filter(p =>
+        p.posisi === "ST" || p.posisi === "CF" || p.posisi === "WF"
+    ).sort((a, b) => b.ovr - a.ovr);
+    for (let i = 0; i < kebutuhan.ATT && attackers.length > 0; i++) {
+        const p = attackers.shift();
+        p.starter = true;
+        starter.push(p);
+        cadangan.splice(cadangan.findIndex(x => x === p), 1);
+    }
+    
+    // 5. Jika belum 11, isi dengan pemain terbaik tersisa
+    while (starter.length < 11 && cadangan.length > 0) {
+        const p = cadangan.reduce((max, pemain) => pemain.ovr > max.ovr ? pemain : max);
+        p.starter = true;
+        starter.push(p);
+        cadangan.splice(cadangan.findIndex(x => x === p), 1);
+    }
+    
+    // 6. Pastikan sisanya cadangan
+    cadangan.forEach(p => p.starter = false);
+    
+    return [...starter, ...cadangan];
+}
 // ┌──────────────────────────────────────────────────────┐
 // │                   FUNGSI LOBI                        │
 // └──────────────────────────────────────────────────────┘
@@ -747,12 +922,17 @@ function pilihKlub(id) {
 function mulaiGame() {
     if (!klubDipilih) return;
     
+    let skuadAwal = JSON.parse(JSON.stringify(squadByClub[klubDipilih.id]));
+    // Atur 11 starter otomatis berdasarkan formasi default
+    skuadAwal = aturStarterOtomatis(skuadAwal, "4-4-2");
+    
     const state = {
         klub: klubDipilih,
-        skuad: JSON.parse(JSON.stringify(squadByClub[klubDipilih.id])),
+        skuad: skuadAwal,
         formasi: "4-4-2",
         sponsorAktif: klubDipilih.sponsorAwal || { nama: "Tidak Ada", bonus: 0 },
         sponsorUndangan: null,
+        pelatihAktif: null,
         riwayatPertandingan: [],
         lastSaved: Date.now()
     };
@@ -760,7 +940,6 @@ function mulaiGame() {
     simpanGame(state);
     window.location.href = 'menu-klub.html';
 }
-
 // Jalankan saat halaman dimuat
 document.addEventListener('DOMContentLoaded', () => {
     updateUIBahasa();

@@ -355,13 +355,21 @@
       }
 
       const riwayat = {
-        id: Date.now(),
-        kita: { nama: kita.nama, skor: skorKita, bendera: kita.bendera || "🏴" },
-        lawan: { nama: lawan.nama, skor: skorLawan, bendera: lawan.bendera },
-        kandang: true,
-        gol: [...daftarGol],
-        tanggal: new Date().toLocaleDateString()
-      };
+  id: Date.now(),
+  kita: {
+    nama: kita.nama,
+    skor: skorKita,
+    bendera: kita.bendera || "🏴", // ✅ Pastikan ini disimpan!
+  },
+  lawan: {
+    nama: lawan.nama,
+    skor: skorLawan,
+    bendera: lawan.bendera, // ✅ Ini juga harus disimpan!
+  },
+  kandang: true,
+  gol: [...daftarGol],
+  tanggal: new Date().toLocaleDateString()
+};
 
       if (!game.riwayatPertandingan) game.riwayatPertandingan = [];
       game.riwayatPertandingan.push(riwayat);
@@ -372,16 +380,9 @@
     }
 
     function gantiFormasiPertandingan() {
-      const newFormasi = prompt("Masukkan formasi (contoh: 4-3-3):");
-      if (newFormasi && formations.includes(newFormasi)) {
-        const game = muatGame();
-        game.formasi = newFormasi;
-        simpanGame(game);
-        alert(`Formasi diubah ke ${newFormasi}`);
-      } else if (newFormasi) {
-        alert("Formasi tidak valid. Pilih: " + formations.join(", "));
-      }
-    }
+  // Buka halaman formasi
+  window.open('formasi.html', '_self');
+}
 
     function substitusiPertandingan() {
       const game = muatGame();
